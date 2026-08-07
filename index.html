@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Pacifican — Vol. 1, No. 1 — August 7, 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌊</text></svg>">
+</head>
+<body>
+<title>The Pacifican — Vol. 1, No. 1 — August 7, 2026</title>
+<style>
+  :root {
+    --ground: #eceff0;
+    --ink: #16222b;
+    --ink-soft: #4d5c66;
+    --rule: #c2cbd1;
+    --accent: #b23a28;
+    --link: #1e5f72;
+    --box: #e2e7e9;
+    --serif-display: "Didot", "Bodoni 72", "Bodoni MT", "Playfair Display", Georgia, serif;
+    --serif-body: "Charter", "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #12181c;
+      --ink: #dde3e6;
+      --ink-soft: #91a1aa;
+      --rule: #33404a;
+      --accent: #e0654e;
+      --link: #82b7c7;
+      --box: #1a2228;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #12181c; --ink: #dde3e6; --ink-soft: #91a1aa; --rule: #33404a;
+    --accent: #e0654e; --link: #82b7c7; --box: #1a2228;
+  }
+  :root[data-theme="light"] {
+    --ground: #eceff0; --ink: #16222b; --ink-soft: #4d5c66; --rule: #c2cbd1;
+    --accent: #b23a28; --link: #1e5f72; --box: #e2e7e9;
+  }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--serif-body);
+    font-size: 1.05rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  .sheet { max-width: 42rem; margin: 0 auto; }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Masthead */
+  .masthead { text-align: center; margin-bottom: 2.25rem; }
+  .masthead .ears {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--sans); font-size: .72rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-soft); margin-bottom: .4rem;
+  }
+  .masthead h1 {
+    font-family: var(--serif-display);
+    font-size: clamp(2.6rem, 9vw, 4.4rem);
+    font-weight: 700; letter-spacing: .015em;
+    margin: 0; line-height: 1.05; text-wrap: balance;
+  }
+  .masthead .tagline {
+    font-style: italic; color: var(--ink-soft); margin: .5rem 0 .9rem; font-size: 1rem;
+  }
+  .masthead .dateline {
+    border-top: 2.5px solid var(--ink); border-bottom: 1px solid var(--ink);
+    padding: .35rem 0; font-family: var(--sans); font-size: .78rem;
+    letter-spacing: .1em; text-transform: uppercase;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  .masthead .dateline .vol { font-variant-numeric: tabular-nums; }
+
+  /* Sections */
+  .kicker {
+    font-family: var(--sans); font-size: .72rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+    margin: 2.4rem 0 .5rem;
+  }
+  .kicker::before { content: "▮ "; font-size: .6rem; vertical-align: 1px; }
+  article h2 {
+    font-family: var(--serif-display); font-weight: 700;
+    font-size: 1.9rem; line-height: 1.15; margin: 0 0 .2rem; text-wrap: balance;
+  }
+  article h2.second { font-size: 1.45rem; }
+  .deck { font-style: italic; color: var(--ink-soft); margin: .1rem 0 .9rem; font-size: 1.02rem; }
+  article p { margin: 0 0 .95rem; }
+  .lead-story > p:first-of-type::first-letter {
+    font-family: var(--serif-display); font-size: 3.3em; float: left;
+    line-height: .82; padding-right: .09em; padding-top: .05em;
+  }
+
+  /* Pier Watch box */
+  .pierwatch {
+    background: var(--box); border-top: 3px solid var(--accent);
+    padding: 1.1rem 1.25rem .9rem; margin: 2.4rem 0;
+  }
+  .pierwatch .kicker { margin: 0 0 .35rem; }
+  .pierwatch .count {
+    font-family: var(--sans); font-size: .85rem; color: var(--ink-soft);
+    font-variant-numeric: tabular-nums; margin-bottom: .5rem;
+  }
+  .pierwatch p { margin: 0 0 .7rem; font-size: .98rem; }
+
+  /* Briefs & almanac */
+  .briefs p, .almanac p { font-size: .98rem; margin: 0 0 .75rem; }
+  .briefs b, .almanac b { font-family: var(--sans); font-size: .85rem; letter-spacing: .02em; }
+  .almanac .row {
+    display: flex; gap: .75rem; border-bottom: 1px solid var(--rule);
+    padding: .45rem 0; font-size: .95rem; align-items: baseline;
+  }
+  .almanac .row:last-child { border-bottom: none; }
+  .almanac .when {
+    font-family: var(--sans); font-size: .78rem; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--ink-soft); min-width: 5.6rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  hr.sep { border: none; border-top: 1px solid var(--rule); margin: 2.2rem 0; }
+  hr.sep-heavy { border: none; border-top: 2.5px solid var(--ink); margin: 2.6rem 0 0; }
+
+  /* Colophon */
+  .colophon { font-size: .88rem; color: var(--ink-soft); padding-top: 1rem; }
+  .colophon h3 {
+    font-family: var(--sans); font-size: .72rem; letter-spacing: .14em;
+    text-transform: uppercase; margin: 1.2rem 0 .4rem; color: var(--ink);
+  }
+  .colophon p { margin: 0 0 .6rem; }
+</style>
+
+<div class="sheet">
+  <header class="masthead">
+    <div class="ears"><span>Fog: yes</span><span>Pier: closed, day 64</span></div>
+    <h1>The Pacifican</h1>
+    <p class="tagline">All the news that's fit to link.</p>
+    <div class="dateline">
+      <span class="vol">Vol. 1, No. 1</span>
+      <span>Friday, August 7, 2026</span>
+      <span>Pacifica, California</span>
+    </div>
+  </header>
+
+  <article class="lead-story">
+    <p class="kicker">The Lead</p>
+    <h2>The Quarry Wins Again (For Now)</h2>
+    <p class="deck">Planning Commission unanimously tells the Coastal Crest developer: 1,225 units, but only if the voters say so. The developer's lawyer promises "a big mess."</p>
+    <p>The Rockaway Quarry has outlasted every developer who ever looked at it, and on Monday night it added another scalp. The Planning Commission <a href="https://www.coastsidenews.com/news/planning-commission-sides-with-city-in-rockaway-quarry-dispute/article_3932c05e-597a-4879-813e-f8b62fee9502.html">unanimously denied</a> Preserve Pacifica's appeal of the city's determination that Coastal Crest — 1,225 rental units in 20 apartment buildings and 26 townhomes across <a href="https://pacificacityca.iqm2.com/Citizens/FileOpen.aspx?Type=14&amp;ID=1648&amp;Inline=True">86.39 acres</a> of the old quarry — is subject to both Ordinance 391-CS, the 1989 voter initiative requiring an election before housing goes on that site, and the 2025 Local Coastal Land Use Plan.</p>
+    <p>Translation: developer Paul Heule can't route around the ballot box with state housing law, at least not in Pacifica's reading. His attorney, Alicia Guerra, saw it differently, telling commissioners: "You guys are gonna have a big mess on your hands." Resident Kimberly Finale countered that the applicant is "attempting to circumvent Pacifica's voters' right to vote." When Pacificans last got that vote — Measure W, 2015 — they rejected quarry development roughly 60–40.</p>
+    <p>Worth noting: two nights later, the City Council's special-meeting agenda carried a <a href="https://pacificacityca.iqm2.com/Citizens/FileOpen.aspx?Type=14&amp;ID=1649&amp;Inline=True">closed session on anticipated litigation</a>, one unnamed case. We draw no conclusion. We merely note the calendar.</p>
+  </article>
+
+  <hr class="sep">
+
+  <article>
+    <p class="kicker">City Hall</p>
+    <h2 class="second">Four Hours, One Cent</h2>
+    <p class="deck">A special meeting with a single item: putting a 1% sales tax on your November ballot.</p>
+    <p>On Wednesday the council convened a special meeting whose entire published agenda was <a href="https://pacificacityca.iqm2.com/Citizens/FileOpen.aspx?Type=14&amp;ID=1649&amp;Inline=True">one resolution</a>: placing a 1-cent transactions-and-use tax for general city revenue on the November 3 ballot. It takes four of five councilmembers to put it there and a simple majority of voters to pass it. The meeting tape runs <a href="https://www.youtube.com/playlist?list=PLFUunuheJ0ZU25IaKfa31mnHMxGy_V4Ob">3 hours and 57 minutes</a> — for one penny, a filibuster-grade evening. As of press time no minutes are posted and no outlet has reported the vote; see the colophon.</p>
+    <p>The why is not mysterious. The city adopted what its own AI meeting-watcher called a <a href="https://www.locunity.com/commissions/pacifica-city-council/reports/12d8156e-ee99-4d13-9ec2-b4a8d6f21135">"lean $55.4M budget"</a> in June while warning of deeper cuts by January, against a roughly $2.3M structural deficit — and that's before you get to a pier with a ~$64M repair estimate. Pacificans already said yes to a half-cent (Measure Y) in 2022, and the regional <a href="https://localnewsmatters.org/2026/07/02/connect-bay-area-transit-tax-ballot-november-2026/">Connect Bay Area</a> half-cent transit tax is also headed for the same ballot. November's receipt is getting long.</p>
+  </article>
+
+  <hr class="sep">
+
+  <article>
+    <p class="kicker">The Coast</p>
+    <h2 class="second">Lights Out at Linda Mar</h2>
+    <p>The beach lots at Linda Mar now close to vehicles from 10 p.m. to 5 a.m. nightly — a barrier goes across the entrances — under a Coastal Commission <a href="https://coastsidebuzz.com/city-of-pacifica-closes-linda-mar-state-beach-north-and-south-parking-lots-to-vehicles-overnight-from-1000pm-to-500am-for-public-safety-after-coastal-commission-issues-emergency-permit/">emergency permit issued July 24</a>, good for an initial 90 days. The question Pacificans kept asking wasn't <i>whether</i> — it was <i>what took so long</i>. The city's own rationale, as relayed by Coastside Buzz, concedes the case: <i>escalating</i> safety, vandalism, and dumping consequences from <i>allowing</i> vehicles to remain continuously as long-term residences — two words that admit both a trend line and a policy. The complaints had been building all summer; by <a href="https://www.locunity.com/commissions/pacifica-city-council/reports/7324dab6-1ea4-4a33-b878-8dac379b36a0">July 13</a>, 22 speakers packed a council meeting demanding action on the lots. From that meeting to a closed gate took 16 days — and required borrowing the word "emergency" from the Coastal Commission for a situation long in the making. The 90 days run out in late October, when the city needs a regular permit and the story's other open question — where the lots' former residents went — comes due as well.</p>
+  </article>
+
+  <hr class="sep">
+
+  <article>
+    <p class="kicker">Schools</p>
+    <h2 class="second">First Bell, Last Dollars</h2>
+    <p>Terra Nova and Oceana went back to school <a href="https://www.juhsd.net/">Thursday, Aug. 6</a>. The K-8 district's return comes with heavier baggage: Pacifica School District is operating under a formal <a href="https://www.pacificasd.org/bullhorn">"lack of going concern"</a> determination — the state's polite phrase for a district whose books alarm its county overseers — after a decade of ~17% enrollment decline, the closure of Ocean Shore Elementary, and the consolidation of Vallemar's middle schoolers into Ingrid B. Lacy. The rescue attempt is now official: the district's parcel-tax renewal is <a href="https://smcacre.gov/elections/current-election">on the November 3 ballot</a>, needing a two-thirds vote, with three of four board seats up the same day. If you want to know what Pacifica will look like in twenty years, skip the council chambers and watch the school board.</p>
+  </article>
+
+  <div class="pierwatch">
+    <p class="kicker">Pier Watch</p>
+    <p class="count">Closed since June 4, 2026 — 64 days</p>
+    <p>No new developments this week, which is itself the story: the pier remains fenced, the repair estimate remains <a href="https://www.locunity.com/commissions/pacifica-city-council/reports/7a4b6440-e9bb-467c-bc60-795cb8bcf3ec">~$64 million</a>, and the Chit Chat Café remains demolished (the W. Manor Drive location soldiers on). Mayor Christine Boles, <a href="https://www.kqed.org/news/12087431/what-will-pacifica-do-about-its-iconic-but-crumbling-pier">to KQED</a>: "The truth is, the ocean's going to win in the end, right?" Meanwhile the town grieves in public: Pacifica Voice's August issue is a <a href="https://pacvoice.org/">Pier Tribute Edition</a>.</p>
+  </div>
+
+  <article class="briefs">
+    <p class="kicker">Briefs</p>
+    <p><b>Dogs 14, Ocean 1.</b> The 10th World Dog Surfing Championships ran Saturday at Linda Mar: 14 dogs, thousands of spectators, and a win in the large-dog division for <a href="https://www.upi.com/Odd_News/2026/08/03/World-Dog-Surfing-Championships-Linda-Del-Mar-Beach-Pacifica/1341785777091/">Rippin Rosie</a>, a Santa Cruz Labrador with 300,000 Instagram followers. The final surf-off was cancelled for dangerous surf — a <a href="https://www.cbsnews.com/sanfrancisco/news/beach-hazards-statement-bay-area-central-coast-extended-august-1-2026-waves-rip-currents/">Beach Hazards Statement</a> with 12-foot breakers off distant tropical cyclones. Even at the dog contest, the ocean gets the last word.</p>
+    <p><b>Democracy's paperwork.</b> The filing window for council districts 2, 3, and 5 closed today at 5 p.m. No candidate roster was posted by press time — profiles of declared candidates so far have run only in <a href="https://pacvoice.org/">Pacifica Voice</a>. Full election desk next week.</p>
+    <p><b>Emergency masonry.</b> The city issued an emergency coastal permit July 24 for a <a href="https://pacificacityca.iqm2.com/Citizens/FileOpen.aspx?Type=14&amp;ID=1648&amp;Inline=True">retaining wall at 400 Belfast Ave.</a> to stabilize a failing slope — a re-issue, after the March permit expired because the owner couldn't find a contractor in time. Sixty-day deadline, again.</p>
+    <p><b>From the blotter.</b> The Tribune's weekly police blotter featured a fight involving 20 to 30 people and multiple arrests for illegal possession of Dungeness crab — out of season, out of luck (<a href="https://www.coastsidenews.com/tribune/">Pacifica Tribune</a>, week of Aug. 3; see colophon).</p>
+    <p><b>On the coastside.</b> A pedestrian was killed on Highway 1 in El Granada Saturday evening (<a href="https://www.coastsidenews.com/news/pedestrian-killed-in-el-granada-crash-identified/article_14004d0c-667c-4961-ab1c-c4733abe7f75.html">Coastside News</a>). One Pacifica resident appeared in the county's death notices for the week of July 27 (<a href="https://patch.com/california/pacifica/pacifica-man-listed-among-smc-death-notices-august-20-26">Patch</a>).</p>
+  </article>
+
+  <hr class="sep">
+
+  <article class="almanac">
+    <p class="kicker">The Lineup</p>
+    <p>Nearshore numbers for Linda Mar from <a href="https://dialed.surf/">Dialed</a>, the publisher's own forecast model (Friday afternoon run); hazards from the <a href="https://forecast.weather.gov/product.php?site=MTR&amp;issuedby=MTR&amp;product=SRF">NWS</a>. Water: 60°F.</p>
+    <div class="row"><span class="when">Fri PM</span><span>Small and tidy: 2 ft of 12-second WSW under a light west breeze. A warm-up, not a headline.</span></div>
+    <div class="row"><span class="when">Sat</span><span>The interesting one: an 18-second WSW train (2 ft) arrives over 12-second W. Long-interval energy hits harder than its height suggests — same species of distant-storm swell that cancelled the dog surf-off. SW wind builds to 12 mph by afternoon; go early, and don't trust an 18-second lull.</span></div>
+    <div class="row"><span class="when">Sun</span><span>The mix peaks: 3 ft of 9-second W stacked on lingering 15-second WSW plus short-period chop. Wind lightest late morning (~6 mph). Best-odds window of the week.</span></div>
+    <div class="row"><span class="when">Mon</span><span>Turns junky: 4 ft of 6-second WNW windswell over a 14-second WSW undertone — and a −1.1 ft minus tide at 3:43 a.m. drains the morning low. Dawn tidepooling arguably beats dawn patrol.</span></div>
+    <div class="row"><span class="when">Beyond</span><span>NWS <a href="https://forecast.weather.gov/shmrn.php?mz=pzz530">coastal waters</a> keeps SW winds and elevated seas through midweek. No beach hazard statements in effect at press time.</span></div>
+  </article>
+
+  <hr class="sep">
+
+  <article class="almanac">
+    <p class="kicker">The Almanac</p>
+    <p>Inland San Mateo County is under a <a href="https://www.cbsnews.com/sanfrancisco/news/bay-area-heat-advisory-flood-advisory-august-7-2026-weekend/">heat advisory</a> this weekend — mid-90s to low 100s. The coast is forecast for the 60s and low 70s. Pacifica's August fog: occasionally a feature.</p>
+    <div class="row"><span class="when">Mon Aug 10</span><span>City Council regular meeting — <a href="https://pacificacityca.iqm2.com/Citizens/Calendar.aspx">cancelled</a> (so is the Aug 17 Planning Commission)</span></div>
+    <div class="row"><span class="when">Wed Aug 12</span><span>Coastal Commission meets in Santa Cruz — <a href="https://www.coastal.ca.gov/meetings/coming.html">no Pacifica items</a> on the docket</span></div>
+    <div class="row"><span class="when">Wednesdays</span><span>Coastside Farmers' Market, Rockaway Beach, 2–6 p.m. (<a href="https://www.coastsidefarmersmarkets.org/">through December</a>)</span></div>
+    <div class="row"><span class="when">Mon Aug 24</span><span>Next City Council meeting, 6 p.m. — density bonus &amp; inclusionary housing ordinance expected</span></div>
+    <div class="row"><span class="when">Sat Aug 29</span><span>Overdose Awareness Memorial Walk &amp; Resource Fair (<a href="https://patch.com/california/pacifica">HOPE</a>)</span></div>
+    <div class="row"><span class="when">Sep 26–27</span><span><a href="https://pacificcoastfogfest.com/">Pacific Coast Fog Fest</a> — parade theme: "Happy 250th Anniversary, America"</span></div>
+  </article>
+
+  <hr class="sep-heavy">
+
+  <footer class="colophon">
+    <h3>Sources &amp; methods</h3>
+    <p>Researched and written by Claude for Eliot Peper; edited by nobody. Built from primary sources — city agenda packets (IQM2), meeting video (Pacific Coast TV), county election filings (smcacre.gov), district board portals — plus the Pacifica Tribune/Coastside News, KQED, Coastside Buzz, Patch, and NWS Bay Area. Surf data comes from <a href="https://dialed.surf/">Dialed</a>, the publisher's own San Mateo coast forecast model (CDIP, NOAA, and Open-Meteo under the hood) — yes, the surf desk is a conflict of interest, and no, we don't care. AI-generated meeting summaries (Locunity) are cited only where cross-checked against agendas and tape. Every link was live on August 7, 2026.</p>
+    <h3>What we couldn't confirm</h3>
+    <p>Whether the Aug. 5 sales-tax resolution actually passed — the 3:57 tape exists but no minutes or coverage do; we'll report the outcome next week. Who filed for council in districts 2, 3, and 5 (roster not yet posted; the City Clerk answers at 650-738-7307). The Tribune blotter items, which reached us as a summary rather than the article itself. The K-8 district's first day of school.</p>
+    <h3>Correction</h3>
+    <p>An earlier version of this edition's dateline called August 7 a Thursday. It is a Friday. We regret the error, and we checked it against the federal government.</p>
+  </footer>
+</div>
+
+</body>
+</html>
